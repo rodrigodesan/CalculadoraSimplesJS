@@ -8,31 +8,34 @@
     <title>Calculadora Simples</title>
 </head>
 <body>
-    <section >
-        <h1>Calculadora</h1>
-        <div id="corpo">
-            <div id="visor">
-                
-            </div>
-            <div id="botoes">
-                <button onclick="main('1')">1</button>
-                <button onclick="main('2')">2</button>
-                <button onclick="main('3')">3</button>
-                <button onclick="main('+')">+</button><br>
-                <button onclick="main('4')">4</button>
-                <button onclick="main('5')">5</button>
-                <button onclick="main('6')">6</button>
-                <button onclick="main('-')">-</button><br>
-                <button onclick="main('7')">7</button>
-                <button onclick="main('8')">8</button>
-                <button onclick="main('9')">9</button>
-                <button onclick="main('x')">x</button><br>
-                <button onclick="limpar()" id="clear">clear</button>
-                <button onclick="main('0')">0</button>
-                <button onclick="main('c')">c</button>
-                <button onclick="main('/')">/</button><br>
-                <button onclick="main('res')" id="res">RESULTADO</button>
-            </div>
+    <h1>Instruções</h1>
+    <ul>
+        <li>Esta calculadora executa operações apenas com dois números;</li>
+        <li>Após digitar o primeiro número, a operação e o segundo número, clique em resultado.</li>
+    </ul>
+    <h2>Calculadora</h2>
+    <section id="corpo">
+        <div >
+            <input type="text"id="visor" placeholder="0">
+        </div>
+        <div id="botoes">
+            <button onclick="main('1')">1</button>
+            <button onclick="main('2')">2</button>
+            <button onclick="main('3')">3</button>
+            <button onclick="main('+')">+</button><br>
+            <button onclick="main('4')">4</button>
+            <button onclick="main('5')">5</button>
+            <button onclick="main('6')">6</button>
+            <button onclick="main('-')">-</button><br>
+            <button onclick="main('7')">7</button>
+            <button onclick="main('8')">8</button>
+            <button onclick="main('9')">9</button>
+            <button onclick="main('x')">x</button><br>
+            <button onclick="limpar()" id="clear">clear</button>
+            <button onclick="main('0')">0</button>
+            <button onclick="main('c')">c</button>
+            <button onclick="main('/')">/</button><br>
+            <button onclick="main('res')" id="res">RESULTADO</button>
         </div>
     </section>
 

@@ -1,9 +1,9 @@
-let visor = document.querySelector("div#visor")
+let visor = document.querySelector("input#visor")
 let valores = ""
 
 /*function parEsq(){
     valores.push("(")
-    visor.textContent += "( " 
+    visor.value += "( " 
 }
 function parDir(){
     valores.push(")")
@@ -21,11 +21,11 @@ function apagar(){
             valores += teste[pos]    
         }
     }  
-    visor.textContent = valores
+    visor.value = valores
 }
 function mais(){
     valores+= ' +'
-    visor.textContent = valores
+    visor.value = valores
 }
 function um(){
     if (valores[valores.length-1] == "+" || valores[valores.length-1] == "-"|| valores[valores.length-1] == "x"|| valores[valores.length-1] == "/"){
@@ -33,7 +33,7 @@ function um(){
     } else{
         valores+= "1"
     }
-    visor.textContent = valores
+    visor.value = valores
 }
 function dois(){
     if (valores[valores.length-1] == "+" || valores[valores.length-1] == "-"|| valores[valores.length-1] == "x"|| valores[valores.length-1] == "/"){
@@ -41,7 +41,7 @@ function dois(){
     } else{
         valores+= "2"
     }
-    visor.textContent = valores
+    visor.value = valores
 }
 function tres(){
     if (valores[valores.length-1] == "+" || valores[valores.length-1] == "-"|| valores[valores.length-1] == "x"|| valores[valores.length-1] == "/"){
@@ -49,11 +49,11 @@ function tres(){
     } else{
         valores+= "3"
     }
-    visor.textContent = valores
+    visor.value = valores
 }
 function menos(){
     valores += " -"
-    visor.textContent = valores
+    visor.value = valores
 }
 function quatro(){
     if (valores[valores.length-1] == "+" || valores[valores.length-1] == "-"|| valores[valores.length-1] == "x"|| valores[valores.length-1] == "/"){
@@ -61,7 +61,7 @@ function quatro(){
     } else{
         valores+= "4"
     }
-    visor.textContent = valores
+    visor.value = valores
 }
 function cinco(){
     if (valores[valores.length-1] == "+" || valores[valores.length-1] == "-"|| valores[valores.length-1] == "x"|| valores[valores.length-1] == "/"){
@@ -69,7 +69,7 @@ function cinco(){
     } else{
         valores+= "5"
     }
-    visor.textContent = valores
+    visor.value = valores
 }
 function seis(){
     if (valores[valores.length-1] == "+" || valores[valores.length-1] == "-"|| valores[valores.length-1] == "x"|| valores[valores.length-1] == "/"){
@@ -77,11 +77,11 @@ function seis(){
     } else{
         valores+= "6"
     }
-    visor.textContent = valores
+    visor.value = valores
 }
 function mult(){
     valores += " x"
-    visor.textContent = valores
+    visor.value = valores
 }
 function sete(){
     if (valores[valores.length-1] == "+" || valores[valores.length-1] == "-"|| valores[valores.length-1] == "x"|| valores[valores.length-1] == "/"){
@@ -89,7 +89,7 @@ function sete(){
     } else{
         valores+= "7"
     }
-    visor.textContent = valores
+    visor.value = valores
 }
 function oito(){
     if (valores[valores.length-1] == "+" || valores[valores.length-1] == "-"|| valores[valores.length-1] == "x"|| valores[valores.length-1] == "/"){
@@ -97,7 +97,7 @@ function oito(){
     } else{
         valores+= "8"
     }
-    visor.textContent = valores
+    visor.value = valores
 }
 function nove(){
     if (valores[valores.length-1] == "+" || valores[valores.length-1] == "-"|| valores[valores.length-1] == "x"|| valores[valores.length-1] == "/"){
@@ -105,11 +105,11 @@ function nove(){
     } else{
         valores+= "9"
     }
-    visor.textContent = valores
+    visor.value = valores
 }
 function dividir(){
     valores+= " /"
-    visor.textContent = valores
+    visor.value = valores
 }
 
 function zero(){
@@ -118,29 +118,29 @@ function zero(){
     } else{
         valores+= "0"
     }
-    visor.textContent = valores
+    visor.value = valores
 }
 function limpar(){
-    visor.innerHTML = ""
+    visor.value = ""
     valores = ""
 }
 function resultado(){
     if (sep.length>=3){
         if (sep[1]=="+"){
             let res = Number(sep[0]) + Number(sep[2])
-            visor.innerHTML = res
+            visor.value = res
             valores = String(res)
         }else if (sep[1]=="-"){
             let res = Number(sep[0]) - Number(sep[2])
-            visor.innerHTML = res 
+            visor.value = res 
             valores = String(res)
         }else if (sep[1]=="x"){
             let res = Number(sep[0]) * Number(sep[2])
-            visor.innerHTML = res 
+            visor.value = res 
             valores = String(res)
         }else if (sep[1]=="/"){
             let res = Number(sep[0]) / Number(sep[2])
-            visor.innerHTML = res 
+            visor.value = res 
             valores = String(res)
         }
     }
@@ -148,11 +148,30 @@ function resultado(){
 
 function main(valor){
     sep = valores.split(' ')
+    if (sep.length>3){
+        if (sep[1]=="+"){
+            let res = Number(sep[0]) + Number(sep[2])
+            visor.value = res
+            valores = String(res)
+        }else if (sep[1]=="-"){
+            let res = Number(sep[0]) - Number(sep[2])
+            visor.value = res 
+            valores = String(res)
+        }else if (sep[1]=="x"){
+            let res = Number(sep[0]) * Number(sep[2])
+            visor.value = res 
+            valores = String(res)
+        }else if (sep[1]=="/"){
+            let res = Number(sep[0]) / Number(sep[2])
+            visor.value = res 
+            valores = String(res)
+        }
+    }
     /*if (valor == "(" && (sep.length==0 || (sep[sep.length-1]=="+"  || sep[sep.length-1]=="-" || sep[sep.length-1]=="x" || sep[sep.length-1]=="/"))) {
         parEsq()
     }else if (valor == ")" && (valores.length>0 && valores[valores.length-1]!="(" && valores[valores.length-1]!=")" && valores[valores.length-1]!="+" && valores[valores.length-1]!="-" && valores[valores.length-1]!="x" && valores[valores.length-1]!="/")){
         parDir()
-    }else*/ if (valor == "c"){
+    }else*/else if (valor == "c"){
         apagar()
     }else if (valor == "+" && (sep[sep.length-1]!="" && sep[sep.length-1]!="+" && sep[sep.length-1]!="-" && sep[sep.length-1]!="x" && sep[sep.length-1]!="/")){
         mais()
